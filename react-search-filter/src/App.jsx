@@ -1,11 +1,9 @@
-import SearchBar from "./components/SearchBar";
-import ListUser from "./components/ListUser";
+import Finder from "./pages/Finder";
 
 function App() {
   return (
     <>
-      <SearchBar />
-      <ListUser />
+      <Finder />
     </>
   );
 }

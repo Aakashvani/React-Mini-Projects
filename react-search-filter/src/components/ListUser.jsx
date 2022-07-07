@@ -9,27 +9,23 @@ import {
   Td,
 } from "@chakra-ui/react";
 
-import { Users } from "../assets/users";
-
-export default function ListUser() {
+export default function ListUser({ data }) {
   return (
     <TableContainer px={"16"}>
       <Table size="lg">
         <Thead>
           <Tr>
             <Th>Name</Th>
-            <Th>Email</Th>
-            <Th>Gender</Th>
+            <Th>Github</Th>
+            <Th>Role</Th>
           </Tr>
         </Thead>
         <Tbody>
-          {Users.map(({ user: id, first_name, last_name, email, gender }) => (
+          {data.map(({ user: id, name, github, role }) => (
             <Tr key={id}>
-              <Td>
-                {first_name} {last_name}
-              </Td>
-              <Td>{email}</Td>
-              <Td>{gender}</Td>
+              <Td>{name}</Td>
+              <Td>{github}</Td>
+              <Td>{role}</Td>
             </Tr>
           ))}
         </Tbody>
