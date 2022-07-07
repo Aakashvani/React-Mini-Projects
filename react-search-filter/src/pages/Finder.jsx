@@ -20,8 +20,8 @@ export default function Finder() {
   return (
     <>
       <Container>
-        <Text fontSize="4xl" as="u" color="gray" textAlign="center">
-          Hello everyone
+        <Text fontSize="4xl" as="u" textAlign="center">
+          Masai School Members
         </Text>
         <Input
           placeholder="Search..."
