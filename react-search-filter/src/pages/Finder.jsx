@@ -19,8 +19,8 @@ export default function Finder() {
 
   return (
     <>
-      <Container>
-        <Text fontSize="4xl" as="u" textAlign="center">
+      <Container textAlign="center">
+        <Text fontSize="4xl" as="u" >
           Masai School Members
         </Text>
         <Input
