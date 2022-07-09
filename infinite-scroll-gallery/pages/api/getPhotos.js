@@ -1,20 +1,24 @@
-import { createClient } from "pexels";
-const client = createClient(process.env.API_KEY);
-const handler = (req, res) => {
-  const {
-    method,
-    query: { query, page },
-  } = req;
+import { createClient } from 'pexels'
 
-  if (method !== "GET") return res.status(405).send("Method not allow");
+const client = createClient(process.env.API_KEY)
 
-  if (!query || !page) return res.status(400).send("Bad request");
+const handler = async (req, res) => {
+	const {
+		method,
+		query: { query, page },
+	} = req
 
-  const result = await client.photos.search({query,page});
+	if (method !== 'GET') return res.status(405).send('Method not allowed')
 
-  console.log(result);
+	if (!query || !page) return res.status(400).send('Bad request')
 
-  return res.send(result);
-};
+	const result = await client.photos.search({ query, page })
 
-export default handler;
+	const photos = result.photos.map((photo) => photo.src.large)
+
+	return res.send(photos)
+
+    
+}
+
+export default handler
