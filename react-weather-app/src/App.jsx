@@ -5,7 +5,7 @@ import Descriptions from "./components/Descriptions";
 import { getFormattedWeatherData } from "./util/weatherService";
 
 function App() {
-  const [city, setCity] = useState("Bangalore");
+  const [city, setCity] = useState("Jammu And Kashmir, IN");
   const [weather, setWeather] = useState(null);
   const [units, setUnits] = useState("metric");
   const [bg, setBg] = useState(hotBg);
@@ -16,7 +16,7 @@ function App() {
       setWeather(data);
 
       // dynamic bg
-      const threshold = units === "metric" ? 20 : 40;
+      const threshold = units === "metric" ? 23 : 40;
       if (data.temp <= threshold) setBg(coldBg);
       else setBg(hotBg);
     };
@@ -50,7 +50,7 @@ function App() {
                 onKeyDown={enterKeyPressed}
                 type="text"
                 name="city"
-                placeholder="Enter City..."
+                placeholder="Press Enter for Search..."
               />
               <button onClick={(e) => handleUnitsClick(e)}>°F</button>
             </div>
