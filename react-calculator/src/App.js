@@ -1,9 +1,17 @@
-import React from 'react'
+import "./App.css";
+import React from "react";
+import Calculator from "./components/Calculator";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div>Hello everyone</div>
-  )
-}
+    <div>
+      <Navbar />
+      <Calculator />
+      <Footer/>
+    </div>
+  );
+};
 
-export default App
+export default App;
