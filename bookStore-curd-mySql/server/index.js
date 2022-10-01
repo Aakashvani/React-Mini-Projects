@@ -19,7 +19,7 @@ import cors from "cors";
 
 const app = express();
 
-// express server middlewares 
+// express server middlewares
 app.use(cors());
 app.use(express.json());
 
@@ -34,7 +34,6 @@ app.get("/", (req, res) => {
   res.json("hello this is the backend");
 });
 
-
 app.get("/books", (req, res) => {
   const q = "SELECT * FROM books";
   db.query(q, (err, data) => {
@@ -44,8 +43,13 @@ app.get("/books", (req, res) => {
 });
 
 app.post("/books", (req, res) => {
-  const q = "INSERT INTO books (`title`,`desc`,`cover`) VALUE (?)";
-  const values = [req.body.title, req.body.desc, req.body.cover];
+  const q = "INSERT INTO books (`title`,`desc`,`price`, `cover`) VALUE (?)";
+  const values = [
+    req.body.title,
+    req.body.desc,
+    req.body.price,
+    req.body.cover,
+  ];
 
   db.query(q, [values], (err, data) => {
     if (err) return res.json(err);
