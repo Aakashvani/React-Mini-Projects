@@ -13,7 +13,7 @@ const Add = () => {
 
   const navigate = useNavigate();
 
-  const hangleChange = (e) => {
+  const handleChange = (e) => {
     setAddbook((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -34,25 +34,25 @@ const Add = () => {
       <input
         type="text"
         placeholder="title"
-        onChange={hangleChange}
+        onChange={handleChange}
         name="title"
       />
       <input
         type="text"
         placeholder="desc"
-        onChange={hangleChange}
+        onChange={handleChange}
         name="desc"
       />
       <input
         type="number"
         placeholder="price"
-        onChange={hangleChange}
+        onChange={handleChange}
         name="price"
       />
       <input
         type="text"
         placeholder="cover"
-        onChange={hangleChange}
+        onChange={handleChange}
         name="cover"
       />
       <button onClick={handleClick}>Add</button>
