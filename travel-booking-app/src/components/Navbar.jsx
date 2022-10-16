@@ -20,7 +20,7 @@ const Navbar = () => {
     setLogo(!logo);
   };
   return (
-    <div className="flex w-full absolute z-10 text-white justify-between items-center h-20 px-4">
+    <div className="flex w-full absolute z-10 text-white justify-between items-center h-20 px-4 ">
       <div>
         <h1 onClick={handleShow} className={logo ? "hidden" : "block"}>
           BEACHES.
