@@ -10,7 +10,7 @@ import SelectsCard from "./SelectsCard";
 
 const Selects = () => {
   return (
-    <div className="max-width-[1204px] py-16 px-4 mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="max-width-[1240px] py-16 px-4 mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <SelectsCard bg={KeyWest} text="Key West" />
       <SelectsCard bg={Maldives3} text="Cocoa Island" />
       <SelectsCard bg={Maldives2} text="Coral Beach " />

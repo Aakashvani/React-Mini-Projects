@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel from "./components/Carousel";
 import Destination from "./components/Destination";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -13,6 +14,7 @@ const App = () => {
       <Destination />
       <Search />
       <Selects />
+      <Carousel />
     </>
   );
 };
