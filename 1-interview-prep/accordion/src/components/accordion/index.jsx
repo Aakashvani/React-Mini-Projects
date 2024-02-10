@@ -25,10 +25,10 @@ const Accordion = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="flex items-center justify-center h-screen">
       <div className="text-center">
         <button
-          className=" p-2 bg-red-500 rounded-md text-white"
+          className="p-2 text-white bg-red-500 rounded-md "
           onClick={() => setEnableMultiSelection(!enableMultiSelection)}
         >
           Enable Multi Selection
@@ -44,7 +44,7 @@ const Accordion = () => {
                     : () => toggleSingleSelection(dataItem.id)
                 }
               >
-                <p className=" font-bold text-lg">{dataItem.question}</p>
+                <p className="text-lg font-bold ">{dataItem.question}</p>
                 <span>⬇</span>
               </div>
 
