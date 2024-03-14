@@ -1,25 +1,42 @@
 import { useState } from "react";
 import "./App.css";
-import question from "./constants/questions.json";
+import questions from "./constants/questions.json";
 import Question from "./components/Question";
+import Result from "./components/Result";
 
 const App = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
 
-  const handleNextQuestion = () => {};
+  const handleNextQuestion = (isCorrect) => {
+    setCurrentQuestion(currentQuestion + 1);
+    setUserAnswers([...userAnswers, isCorrect]);
+  };
+  const resetQuiz = () => {
+    setCurrentQuestion(0);
+    setUserAnswers([]);
+  };
 
   return (
     <div className="App">
       <h1>Quiz Time</h1>
 
-      {/* questions components */}
-      <Question
-        question={question[currentQuestion]}
-        onAnswerClick={handleNextQuestion}
-      />
+      {/* Questions Component */}
+      {currentQuestion < questions.length && (
+        <Question
+          question={questions[currentQuestion]}
+          onAnswerClick={handleNextQuestion}
+        />
+      )}
 
-      {/* Result components */}
+      {/* Result Component */}
+      {currentQuestion === questions.length && (
+        <Result
+          userAnswers={userAnswers}
+          questions={questions}
+          resetQuiz={resetQuiz}
+        />
+      )}
     </div>
   );
 };

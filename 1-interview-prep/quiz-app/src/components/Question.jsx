@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
 
-const Question = ({ question, onAnswerClick }) => {
+const Question = ({ question, onAnswerClick = () => {} }) => {
   return (
     <div className="question">
       <h2>{question.question}</h2>
       <ul className="options">
-        {question?.answerOptions?.map((option) => {
+        {question.answerOptions.map((option) => {
           return (
             <li key={option.text}>
               <button onClick={() => onAnswerClick(option.isCorrect)}>
