@@ -1,0 +1,21 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.StarRating {
+  cursor: pointer;
+}
+span {
+  font-size: 1.5rem;
+  padding: 0px 2px 0px 2px;
+}
+
+.on {
+  opacity: 1;
+  color: gold;
+}
+
+.off {
+  opacity: 0.5;
+}
