@@ -1,4 +1,6 @@
-import React, { createContext } from "react";
+"use client";
+
+import React, { createContext, useContext } from "react";
 
 const GlobalProvider = createContext();
 
@@ -8,4 +10,8 @@ export const GlobalProvider = ({ children }) => {
       {children}
     </GlobalProvider.Provider>
   );
+};
+
+export const useGlobalContext = () => {
+  return useContext(GlobalProvider);
 };
