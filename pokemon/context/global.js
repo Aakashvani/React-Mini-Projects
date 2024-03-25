@@ -1,17 +1,24 @@
 "use client";
 
-import React, { createContext, useContext } from "react";
+import { createContext } from "react";
 
-const GlobalProvider = createContext();
+const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+  const initialState = {
+    allPokemon: [],
+    pokemon: {},
+    pokemonDatabase: [],
+    searchResults: [],
+    next: "",
+    loading: false,
+  };
+
   return (
-    <GlobalProvider.Provider value={{ hello }}>
+    <GlobalContext.Provider value={{ ...initialState }}>
       {children}
-    </GlobalProvider.Provider>
+    </GlobalContext.Provider>
   );
 };
 
-export const useGlobalContext = () => {
-  return useContext(GlobalProvider);
-};
+export default GlobalContext;
