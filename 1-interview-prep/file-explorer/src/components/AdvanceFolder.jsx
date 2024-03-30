@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const Folder = ({ explorer }) => {
+const AdvanceFolder = ({ explorer }) => {
   //   console.log(explorer);
 
   const [expand, setExpand] = useState(false);
@@ -21,7 +21,7 @@ const Folder = ({ explorer }) => {
 
         <div style={{ display: expand ? "block" : "none", paddingLeft: 25 }}>
           {explorer.items.map((item) => {
-            return <Folder explorer={item} key={item.id} />;
+            return <AdvanceFolder explorer={item} key={item.id} />;
           })}
         </div>
       </div>
@@ -31,4 +31,4 @@ const Folder = ({ explorer }) => {
   }
 };
 
-export default Folder;
+export default AdvanceFolder;
