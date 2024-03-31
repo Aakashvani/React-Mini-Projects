@@ -12,6 +12,7 @@ function App() {
     <>
       <p>Basic file explorer ↓</p>
       <Folder explorer={explorerData} />
+
       <p>Advance file explorer ↓ with button for creating folder and files</p>
       <AdvanceFolder explorer={explorerData} />
     </>
