@@ -20,6 +20,13 @@ const AdvanceFolder = ({ explorer }) => {
     });
   };
 
+  const onAddFolder = (e) => {
+    if (e.keyCode === 13 && e.target.value) {
+      // add logic
+      setShowInput({ ...showInput, visible: false });
+    }
+  };
+
   if (explorer.isFolder) {
     return (
       <div style={{ marginTop: 5 }}>
@@ -43,6 +50,7 @@ const AdvanceFolder = ({ explorer }) => {
               <span>{showInput.isFolder ? "📁" : "📄"}</span>
               <input
                 onBlur={() => setShowInput({ ...showInput, visible: false })}
+                onKeyDown={onAddFolder}
                 type="text"
                 className="inputContainer__input"
                 autoFocus
