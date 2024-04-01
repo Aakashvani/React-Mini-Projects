@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const AdvanceFolder = ({ explorer }) => {
+const AdvanceFolder = ({ handleInsertNode, explorer }) => {
   //   console.log(explorer);
 
   const [expand, setExpand] = useState(false);
@@ -22,7 +22,7 @@ const AdvanceFolder = ({ explorer }) => {
 
   const onAddFolder = (e) => {
     if (e.keyCode === 13 && e.target.value) {
-      // add logic
+      handleInsertNode(explorer.id, e.target.value, showInput.isFolder);
       setShowInput({ ...showInput, visible: false });
     }
   };
@@ -58,7 +58,13 @@ const AdvanceFolder = ({ explorer }) => {
             </div>
           )}
           {explorer.items.map((item) => {
-            return <AdvanceFolder explorer={item} key={item.id} />;
+            return (
+              <AdvanceFolder
+                handleInsertNode={handleInsertNode}
+                explorer={item}
+                key={item.id}
+              />
+            );
           })}
         </div>
       </div>
