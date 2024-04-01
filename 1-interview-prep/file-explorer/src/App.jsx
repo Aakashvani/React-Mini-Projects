@@ -9,13 +9,16 @@ function App() {
   // console.log(explorerData);
 
   return (
-    <>
-      <p>Basic file explorer ↓</p>
-      <Folder explorer={explorerData} />
-
-      <p>Advance file explorer ↓ with button for creating folder and files</p>
-      <AdvanceFolder explorer={explorerData} />
-    </>
+    <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div>
+        <p>Basic file explorer ↓</p>
+        <Folder explorer={explorerData} />
+      </div>
+      <div>
+        <p>Advance file explorer ↓ with button for creating folder and files</p>
+        <AdvanceFolder explorer={explorerData} />
+      </div>
+    </div>
   );
 }
 
